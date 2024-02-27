@@ -1,35 +1,43 @@
 .container {
-  height: 100vh;
+  height: 900px;
 }
 
 .card-big {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 100vh;
+  height: 800px;
 }
 
 .card-big > img {
-  height: 200px;
+  height: 500px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-big h2 {
-  font-size: 16px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
 }
 
+.card-big h3 {
+  font-size: 20px;
+  margin-top: 2px;
+  padding: 3px;
+}
+
 .card-big p {
-  font-size: 12px;
+  font-size: 20px;
   opacity: .7;
   margin: 0;
+  padding: 3px;
+  color: black;
 }
 
 
 .card-big .card-big-infos {
-  padding: 16px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -38,7 +46,7 @@
 
 .card-big-infos .card-big-user {
   position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
+  right: 30px;
+  top: -40px;
+  width: 100px;
 }

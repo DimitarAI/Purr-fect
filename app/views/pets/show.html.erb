@@ -4,12 +4,15 @@
   <div class="card-big-infos">
     <div>
       <h2><%= @pet.name %></h2>
-      <h3>Species: <%= @pet.species %></p>
-      <p>Address: <%= @pet.address %></p>
-      <p>Description: <%= @pet.description %></p>
+      <h3><strong>Species: </strong><%= @pet.species %></p>
+      <p><strong>Address: </strong><%= @pet.address %></p>
+      <p><strong>Description: </strong><%= @pet.description %></p>
     </div>
-    <h2 class="card-big-pricing">£<%= @pet.daily_pricing %></h2>
+    <h3 class="card-big-pricing">£<%= @pet.daily_pricing %></h3>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-big-user avatar-bordered" />
   </div>
+  </div>
+  <div>
+      <%= link_to "Back to home Page", root_path %>
   </div>
 </div>
