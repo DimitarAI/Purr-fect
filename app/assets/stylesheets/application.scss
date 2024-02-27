@@ -8,5 +8,6 @@
 @import "font-awesome";
 
 // Your CSS partials
+@import "components/navbar"; // Add this line to import your navbar styles
 @import "components/index";
 @import "pages/index";
