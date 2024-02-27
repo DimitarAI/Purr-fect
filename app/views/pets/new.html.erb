@@ -1,0 +1,10 @@
+<h1>You can add your pet here!</h1>
+<%= simple_form_for [@pet] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :species, :collection => %w[dog cat bird fish turtle hedgehog capybara] %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :daily_pricing %>
+  <%= f.input :photos, as: :file %>
+  <%= f.button :submit %>
+<% end %>
