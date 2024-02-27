@@ -1,11 +1,15 @@
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
+<div class="container">
+  <div class="card-big">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-big-infos">
     <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+      <h2><%= @pet.name %></h2>
+      <h3>Species: <%= @pet.species %></p>
+      <p>Address: <%= @pet.address %></p>
+      <p>Description: <%= @pet.description %></p>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <h2 class="card-big-pricing">£<%= @pet.daily_pricing %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-big-user avatar-bordered" />
+  </div>
   </div>
 </div>
