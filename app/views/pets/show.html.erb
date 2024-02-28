@@ -3,7 +3,7 @@
     <% if @pet.photos.attached? %>
       <% if @pet.photos.one? %>
         <% @pet.photos.each do |photo|%>
-              
+
         <%=cl_image_tag photo.key, crop: :fill %>
         <%end %>
       <%else %>
@@ -42,4 +42,5 @@
   <div>
     <%= link_to "Back to all animals", root_path, class: "btn btn-primary my-3" %>
   </div>
+  <%= render "bookings/form", user: @user, booking: @booking %>
 </div>
