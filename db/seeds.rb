@@ -19,17 +19,17 @@ User.create(first_name: "Paulina", last_name: "Kisielewska", email: "paulina1@ma
 User.create(first_name: "Daisy", last_name: "Blabla", email: "daisy@mail.com", password: "123123")
 
 daisy_file = URI.open("https://images.unsplash.com/photo-1601758124277-f0086d5ab050?q=80&w=2110&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-daisy = Pet.new(name: "Daisy", species: "dog", description: "The dog is a domesticated descendant of the wolf. Also called the domestic dog, it is derived from extinct gray wolves, and the gray wolf is the dog's closest living relative.", address: "Kraepelinstr. 41, 80804 München", daily_pricing: 100, user: User.all.sample)
+daisy = Pet.new(name: "Daisy", species: "dog", description: "The dog is a domesticated descendant of the wolf.", address: "Kraepelinstr. 41, 80804 München", daily_pricing: 100, user: User.all.sample)
 daisy.photos.attach(io: daisy_file, filename: "nes1.png", content_type: "image/png")
 daisy.save
 
 angel_file = URI.open("https://images.unsplash.com/photo-1583511655826-05700d52f4d9?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-angel = Pet.new(name: "Angel", species: "dog", description: "The dog is a domesticated descendant of the wolf. Also called the domestic dog, it is derived from extinct gray wolves, and the gray wolf is the dog's closest living relative.", address: "Parzivalstr. 21, 80804 München", daily_pricing: 100, user: User.all.sample)
+angel = Pet.new(name: "Angel", species: "dog", description: "The dog is a domesticated descendant of the wolf.", address: "Parzivalstr. 21, 80804 München", daily_pricing: 100, user: User.all.sample)
 angel.photos.attach(io: angel_file, filename: "nes2.png", content_type: "image/png")
 angel.save
 
 snow_white_file = URI.open("https://images.unsplash.com/photo-1536187422607-7d9bfde01640?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-snow_white = Pet.new(name: "Snow white", species: "dog", description: "The dog is a domesticated descendant of the wolf. Also called the domestic dog, it is derived from extinct gray wolves, and the gray wolf is the dog's closest living relative.", address: "Karl-Theodor-Straße 62, 80803 München", daily_pricing: 100, user: User.all.sample)
+snow_white = Pet.new(name: "Snow white", species: "dog", description: "The dog is a domesticated descendant of the wolf.", address: "Karl-Theodor-Straße 62, 80803 München", daily_pricing: 100, user: User.all.sample)
 snow_white.photos.attach(io: snow_white_file, filename: "nes3.png", content_type: "image/png")
 snow_white.save
 
