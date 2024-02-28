@@ -5,6 +5,6 @@
   <%= f.input :description %>
   <%= f.input :address %>
   <%= f.input :daily_pricing %>
-  <%= f.input :photos, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit %>
 <% end %>
