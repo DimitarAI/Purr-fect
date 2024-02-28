@@ -1,5 +1,7 @@
 <h5>Add your booking</h5>
-        <%= simple_form_for [@booking.pet] do |f| %>
-          <%= f.input :start_date, placeholder: "Add your review here..." %>
-          <%= f.submit class:"btn btn-flat" %>
-        <% end %>
+  <%= simple_form_for [@pet, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :status %>
+    <%= f.submit class:"btn btn-flat" %>
+  <% end %>

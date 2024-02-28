@@ -4,8 +4,10 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
     @pet = Pet.find(params[:pet_id])
+    # @user = User.find(params[:booking][:user_id])
+    @booking = Booking.new(booking_params)
+    # @booking.user = @user
     @booking.pet = @pet
     if @booking.save
       redirect_to pet_path(@pet)
@@ -15,7 +17,9 @@ class BookingsController < ApplicationController
     end
   end
 
-  def review_params
-    params.require(:review).permit(:comment, :rating)
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :status, :user_id, :pet_id)
   end
 end
