@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="card-big">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-big-infos">
+    <div>
+      <h2><%= @pet.name %></h2>
+      <h3><strong>Species: </strong><%= @pet.species %></p>
+      <p><strong>Address: </strong><%= @pet.address %></p>
+      <p><strong>Description: </strong><%= @pet.description %></p>
+    </div>
+    <h3 class="card-big-pricing">£<%= @pet.daily_pricing %></h3>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-big-user avatar-bordered" />
+  </div>
+  </div>
+  <div>
+      <%= link_to "Back to home Page", root_path %>
+  </div>
+</div>
