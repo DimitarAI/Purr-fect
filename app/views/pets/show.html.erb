@@ -1,6 +1,32 @@
 <div class="container">
   <div class="card-big">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <% if @pet.photos.attached? %>
+      <% if @pet.photos.one? %>
+        <% @pet.photos.each do |photo|%>
+        <%=cl_image_tag photo.key, crop: :fill %>
+        <%end %>
+      <%else %>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <% @pet.photos.each do |photo|%>
+                <div class="carousel-item active">
+                  <%=cl_image_tag photo.key, crop: :fill, class:"d-block w-100"%>
+                </div>
+              <%end%>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      <% end %>
+      <% else %>
+        <img src=<%=asset_path('pet.jpg') %>>
+      <%end%>
   <div class="card-big-infos">
     <div>
       <h2><%= @pet.name %></h2>
@@ -8,11 +34,11 @@
       <p><strong>Address: </strong><%= @pet.address %></p>
       <p><strong>Description: </strong><%= @pet.description %></p>
     </div>
-    <h3 class="card-big-pricing">£<%= @pet.daily_pricing %></h3>
+    <h3 class="card-big-pricing"><%= @pet.daily_pricing %>€</h3>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-big-user avatar-bordered" />
   </div>
   </div>
   <div>
-      <%= link_to "Back to home Page", root_path %>
+    <%= link_to "Back to all animals", root_path, class: "btn btn-primary my-3" %>
   </div>
 </div>

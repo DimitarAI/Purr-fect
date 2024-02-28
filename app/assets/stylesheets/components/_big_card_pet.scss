@@ -1,16 +1,30 @@
 .container {
-  height: 900px;
+  height: fit-content;
+  width: 60%;
+}
+
+.container > img {
+  background-size: cover;
+  background-position: center;
 }
 
 .card-big {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 800px;
+  height: fit-content;
+}
+
+.carousel-item {
+  height: 400px;
+  width: 100%;
+  // object-fit: cover;
+  background-size: cover;
+  background-position: center;
 }
 
 .card-big > img {
-  height: 500px;
+  height: 350px;
   width: 100%;
   object-fit: cover;
 }
