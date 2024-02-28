@@ -10,11 +10,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+  <body class="d-flex flex-column min-vh-100">
+    <div class="page-content flex-grow-1">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= render 'layouts/navbar' %>
+      <%= yield %>
+    </div>
+
+        <%= render 'layouts/footer' %>
+
   </body>
 </html>
