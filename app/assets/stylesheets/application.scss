@@ -11,3 +11,16 @@
 @import "components/index";
 @import "pages/index";
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
