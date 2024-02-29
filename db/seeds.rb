@@ -13,29 +13,29 @@ Pet.destroy_all
 require "open-uri"
 # users:
 
-ghadeer_file = URI.open("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+ghadeer_file = URI.open("https://plus.unsplash.com/premium_photo-1675034393381-7e246fc40755?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D")
 ghadeer = User.new(first_name: "Ghadeer", last_name: "Kherullah", email: "ghadeer@mail.com", password: "123123")
-ghadeer.photos.attach(io: ghadeer_file, filename: "nes1.png", content_type: "image/png")
+ghadeer.photo.attach(io: ghadeer_file, filename: "nes1.png", content_type: "image/png")
 ghadeer.save
 
 simon_file = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 simon = User.new(first_name: "Simon", last_name: "Pentzien", email: "simon@mail.com", password: "123123")
-simon.photos.attach(io: simon_file, filename: "nes1.png", content_type: "image/png")
+simon.photo.attach(io: simon_file, filename: "nes1.png", content_type: "image/png")
 simon.save
 
 dimitar_file = URI.open("https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 dimitar = User.new(first_name: "Dimitar", last_name: "Petrov", email: "dimitar@mail.com", password: "123123")
-dimitar.photos.attach(io: dimitar_file, filename: "nes1.png", content_type: "image/png")
+dimitar.photo.attach(io: dimitar_file, filename: "nes1.png", content_type: "image/png")
 dimitar.save
 
 paulina_file = URI.open("https://plus.unsplash.com/premium_photo-1671656333460-a3a85854d01e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 paulina = User.new(first_name: "Paulina", last_name: "Kisielewska", email: "paulina1@mail.com", password: "123123")
-paulina.photos.attach(io: paulina_file, filename: "nes1.png", content_type: "image/png")
+paulina.photo.attach(io: paulina_file, filename: "nes1.png", content_type: "image/png")
 paulina.save
 
 ceasar_file = URI.open("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 ceasar = User.new(first_name: "Ceasar", last_name: "Blabla", email: "ceasar@mail.com", password: "123123")
-ceasar.photos.attach(io: ceasar_file, filename: "nes1.png", content_type: "image/png")
+ceasar.photo.attach(io: ceasar_file, filename: "nes1.png", content_type: "image/png")
 ceasar.save
 
 # User.new(first_name: "Ghadeer", last_name: "Kherullah", email: "ghadeer@mail.com", password: "123123")
