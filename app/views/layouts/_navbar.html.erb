@@ -18,7 +18,7 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag: @User.photos, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= cl_image_tag  @auser.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Add Pet", new_pet_path, class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
