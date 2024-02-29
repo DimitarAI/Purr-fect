@@ -37,7 +37,12 @@
         <p><i class="fa-solid fa-pen"></i> <%= @pet.description %></p>
       </div>
       <h3 class="card-big-pricing"><%= @pet.daily_pricing %>€</h3>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-big-user avatar-bordered" />
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag  current_user.photo.key, class:"card-big-user avatar-bordered" %>
+      <%else %>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-big-user avatar-bordered" />
+      <%end %>
+
     </div>
     </div>
     <div>
