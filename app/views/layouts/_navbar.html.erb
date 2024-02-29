@@ -1,8 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to root_path do %>
-  <%= image_tag 'petsnav.jpg', class: 'navbar-brand', style: 'height: 50px; width: auto;' %>
-    <% end %>
+      <p class="logo">
+        <i class="fa-solid fa-paw fa-2xl"></i>
+        Purrfect
+      </p>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,16 +13,16 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          <%# </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          <%# </li>  %>
           <li class="nav-item dropdown">
             <%= cl_image_tag  @auser.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Add Pet", new_pet_path, class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Booking", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

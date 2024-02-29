@@ -12,10 +12,9 @@
 
   <body class="d-flex flex-column min-vh-100">
     <div class="page-content flex-grow-1">
+      <%= render 'layouts/navbar' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-      <%= render 'layouts/navbar' %>
-      <%= render 'layouts/banner' %>
       <%= yield %>
     </div>
 
