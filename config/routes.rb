@@ -10,11 +10,12 @@ Rails.application.routes.draw do
 
   resources :pets, only: %i[index show new create] do
     resources :bookings, only: [:create]
+  end
   resources :pets do
     collection do
       get :search
     end
- 
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"
