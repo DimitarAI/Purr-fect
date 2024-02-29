@@ -7,3 +7,8 @@
   </div>
 </div>
 </div>
+
+<%= form_with(url: pets_path, method: :get, local: true) do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search" %>
+<% end %>

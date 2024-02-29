@@ -4,6 +4,12 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all
+    if params[:query].present?
+      @pets = Pet.name_and_spieces(params[:query])
+    else
+      @pets = Pet.all
+    end
+
   end
 
   def show
@@ -38,4 +44,5 @@ class PetsController < ApplicationController
   def set_user
     @user = current_user
   end
+
 end
