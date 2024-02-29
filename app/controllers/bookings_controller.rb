@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all
+    @my_pets_bookings = Booking.where(pet_id: current_user.pets.pluck(:id))
+    @my_bookings = Booking.where(user_id: current_user.id)
   end
 
   def create

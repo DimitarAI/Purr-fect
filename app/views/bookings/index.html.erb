@@ -1,13 +1,32 @@
 <h1>Here are your bookings</h1>
-<% @bookings.each do |booking| %>
+<% if @my_bookings.empty? %>
+  <h4>You didn't make any bookings yet</h4>
+<% else %>
+  <% @my_bookings.each do |booking| %>
   <div class="card booking">
-    <h5 class="card-header"> Booking no. <%= count %> for <%= booking.pet.name %></h5>
+    <h5 class="card-header"> You booked <%= booking.pet.name %></h5>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <h5 class="card-title">From <%= booking.start_date.strftime('%d. %B %Y') %> to <%= booking.end_date.strftime('%d. %B %Y') %></h5>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
       <% end %>
   </div>
-
+<% end %>
+<% if @my_pets_bookings.empty? %>
+  <h4>No pending requests</h4>
+<% else %>
+  <% @my_pets_bookings.each do |booking| %>
+    <div class="card booking">
+      <h5 class="card-header"> Booking from <%= booking.user.first_name %> for <%= booking.pet.name %></h5>
+        <div class="card-body">
+          <h5 class="card-title">From <%= booking.start_date.strftime('%d. %B %Y') %> to <%= booking.end_date.strftime('%d. %B %Y') %></h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <% if booking.status == "pending" %>
+            <%=link_to "Accept", dashboard_path, class:"btn btn-success"%>
+            <%=link_to "Decline", dashboard_path, class:"btn btn-danger"%>
+          <% end %>
+        </div>
+        <% end %>
+    </div>
+<% end %>
 </div>
