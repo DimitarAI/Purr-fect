@@ -4,11 +4,10 @@
     <h1>Purrfect brings <strong>you</strong> to <strong>best buddies</strong>!</h1>
     <p>Change your life and learn to remain positive by choosing your pet buddy with Purrfect.</p>
     <a class="btn btn-flat" href="#">Book your pet now</a>
+    <%= form_with(url: root_path, method: :get, local: true) do %>
+      <%= text_field_tag :query, params[:query] %>
+      <%= submit_tag "Search" %>
+    <% end %>
   </div>
 </div>
 </div>
-
-<%= form_with(url: pets_path, method: :get, local: true) do %>
-  <%= text_field_tag :query, params[:query] %>
-  <%= submit_tag "Search" %>
-<% end %>
