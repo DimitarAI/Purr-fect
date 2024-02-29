@@ -1,5 +1,45 @@
 .show-page {
-  display: grid;
-  grid-template-columns: 10% 1fr 1fr 10%;
-  grid-gap: 16px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  margin-right: 8%;
+  margin-left: 8%;
+}
+
+.container-show-pet {
+  flex-grow: 1;
+}
+
+.pet-booking {
+  height: 100vh;
+  width: 30%;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.pet-booking > h5 {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.pet-booking .form-select {
+  font-size: 12px;
+  padding: 3px 30px 3px 3px !important;
+}
+
+.pet-booking .btn {
+  margin-top: 20px;
+}
+
+.show-page .btn {
+  background-color: #7469B6 !important;
+  border-radius: 5px;
+  border-color: #7469B6;
 }
