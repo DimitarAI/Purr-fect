@@ -1,4 +1,5 @@
 .show-page {
   display: grid;
-  grid-template-columns: 400px 400px;
+  grid-template-columns: 10% 1fr 1fr 10%;
+  grid-gap: 16px;
 }
