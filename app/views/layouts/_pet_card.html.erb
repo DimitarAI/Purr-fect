@@ -1,8 +1,7 @@
 <div class="mb-4 small-card" style="margin-top: 40px;">
   <div class="card h-100 d-flex flex-column">
-    <% pet.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, class: 'card-img-top', height: 150 %>
-    <% end %>
+
+    <%= cl_image_tag pet.photos[0].key, class: 'card-img-top', height: 150 if pet.photos.attached?%>
     <div class="card-body d-flex flex-column">
       <h5 class="card-title"><%= pet.name %></h5>
       <p class="card-text"><%= pet.description %></p>
