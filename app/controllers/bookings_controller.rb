@@ -20,6 +20,21 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    #@my_pets_bookings = Booking.where(pet_id: current_user.pets.pluck(:id))
+    @my_pets_booking = Booking.find(params[:id])
+    @my_pets_booking.status = "accepted"
+    @my_pets_booking.save
+    redirect_to dashboard_path
+  end
+
+  def decline
+    @my_pets_booking = Booking.find(params[:id])
+    @my_pets_booking.status = "declined"
+    @my_pets_booking.save
+    redirect_to dashboard_path
+  end
+
   private
 
   def booking_params
