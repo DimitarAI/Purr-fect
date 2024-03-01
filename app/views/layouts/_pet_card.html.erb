@@ -1,0 +1,12 @@
+<div class="mb-4 small-card" style="margin-top: 40px;">
+  <div class="card h-100 d-flex flex-column">
+    <% pet.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, class: 'card-img-top', height: 150 %>
+    <% end %>
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title"><%= pet.name %></h5>
+      <p class="card-text"><%= pet.description %></p>
+      <a href="<%= pet_path(pet) %>" class="btn custom-btn mt-auto">Rent This Pet</a>
+    </div>
+  </div>
+</div>
