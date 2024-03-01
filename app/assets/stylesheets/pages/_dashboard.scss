@@ -1,0 +1,47 @@
+.container-dashboard {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.container-dashboard > h3 {
+  font-weight: bold;
+}
+
+.container-dashboard .btn-primary {
+  background-color: #7469B6;
+  border-color: #7469B6;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.booking {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.booking > .card-body {
+  padding: 10px;
+}
+
+.booking > .card-header {
+  background-color: white;
+}
+
+.booking > .card-title {
+  margin-bottom: 0;
+}
+
+// .my-pets-booking {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   height: fit-content;
+//   padding: 20px;
+//   border-radius: 10px;
+// }
