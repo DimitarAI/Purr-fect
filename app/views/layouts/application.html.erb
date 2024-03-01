@@ -14,9 +14,9 @@
   <div class="page-container">
       <div class="navbar-container"><%= render 'layouts/navbar' %></div>
       <div class="content-container">
+        <%= yield %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
-        <%= yield %>
       </div>
       <div class="footer-container"><%= render 'layouts/footer' %></div>
       </div>
