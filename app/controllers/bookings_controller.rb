@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
     @bookings = Booking.all
     @my_pets_bookings = Booking.where(pet_id: current_user.pets.pluck(:id))
@@ -12,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.status = "pending"
     if @booking.save
-      redirect_to pet_path(@pet)
+      redirect_to dashboard_path(@user)
     else
       render "pets/show", status: :unprocessable_entity
     end
