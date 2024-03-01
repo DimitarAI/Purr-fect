@@ -11,7 +11,9 @@ class Pet < ApplicationRecord
                   trigram: {}
                 }
 
-
   validates :name, :address, :daily_pricing, presence: true
   validates :species, presence: true, inclusion: { in: %w[dog cat bird fish turtle hedgehog capybara] }
+  # geocoding
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

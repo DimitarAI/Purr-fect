@@ -5,15 +5,21 @@ class PetsController < ApplicationController
   def index
     if params[:query].present?
       @pets = Pet.search_by_name_and_species(params[:query])
-
     else
       @pets = Pet.all
     end
   end
 
-
   def show
     @booking = Booking.new
+    if  @pet.geocoded?
+      @markers = {
+        lat: @pet.latitude,
+        lng: @pet.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { pet: @pet }),
+        marker_html: render_to_string(partial: "marker", locals: { pet: @pet })
+        }
+      end
   end
 
   def new
@@ -30,10 +36,9 @@ class PetsController < ApplicationController
       else
         render :new, status: :unprocessable_entity
       end
-    end
+  end
 
   def search
-
   end
 
   private
