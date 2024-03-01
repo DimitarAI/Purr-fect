@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <% if @pets.empty? %>
+      <p>We are sorry, we do not have such pet. Try again your search.</p>
+    <% else %>
+      <% @pets.each do |pet| %>
+        <div class="col-sm-4">
+          <div class="card">
+            <% if pet.photos.attached? %>
+              <%= image_tag url_for(pet.photos.first), class: "card-img-top", alt: pet.name %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= pet.name %></h5>
+              <p class="card-text"><%= pet.species %></p>
+              <a href="<%= pet_path(pet) %>" class="btn btn-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
