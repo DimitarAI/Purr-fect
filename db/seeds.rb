@@ -50,7 +50,7 @@ daisy = Pet.new(name: "Daisy", species: "dog", description: "The dog is a domest
 daisy.photos.attach(io: daisy_file, filename: "nes1.png", content_type: "image/png")
 daisy.save
 
-angel_file = URI.open("https://images.unsplash.com/photo-1583511655826-05700d52f4d9?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+angel_file = URI.open("https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=1924&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 angel = Pet.new(name: "Angel", species: "dog", description: "The dog is a domesticated descendant of the wolf.", address: "Parzivalstr. 21, 80804 München", daily_pricing: 100, user: User.all.sample)
 angel.photos.attach(io: angel_file, filename: "nes2.png", content_type: "image/png")
 angel.save

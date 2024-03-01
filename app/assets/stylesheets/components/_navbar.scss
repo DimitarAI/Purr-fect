@@ -24,3 +24,22 @@
   background-size: cover;
   background-position: center;
 }
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #E1AFD1;
+  transition: background 0.3s ease;
+  display: inline-block;
+  width: 65px;
+}
+
+.btn-flat:hover {
+  background: #7469B6;
+  color: white;
+}
+
+.margin-right {
+  margin-right: 10px; // adjust as needed
+}
