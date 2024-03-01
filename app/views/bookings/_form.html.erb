@@ -2,9 +2,13 @@
   <h5>Book <%= @pet.name %> now!</h5>
 
     <%= simple_form_for [@pet, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%# <%= f.input :status %>
+      <%# <%= f.input :start_date %>
+      <%= f.input :start_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :end_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
       <%= f.submit "Create Booking",
                class: "btn btn-primary",
                title: user_signed_in? ? "" : "You have to Log in before making the booking!" %>
