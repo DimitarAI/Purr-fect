@@ -4,7 +4,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-form {
+.add-pets-form {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -12,13 +12,13 @@ form {
   border-radius: 8px;
 }
 
-form h1 {
+.add-pets-form h1 {
   color: #7469B6;
   text-align: center;
   margin-bottom: 20px;
 }
 
-form input[type="text"],
+.add-pets-form input[type="text"],
 form input[type="number"],
 form select {
   width: 100%;
@@ -28,7 +28,7 @@ form select {
   border: 1px solid #AD88C6;
 }
 
-form input[type="submit"] {
+.add-pets-form input[type="submit"] {
   background-color: #7469B6;
   color: white;
   border: none;
@@ -37,7 +37,7 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-form input[type="submit"]:hover {
+.add-pets-form input[type="submit"]:hover {
   background-color: #AD88C6;
 }
 
