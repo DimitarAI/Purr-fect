@@ -1,24 +1,6 @@
 <%= render 'layouts/banner' %>
-
-<div class="container my-container">
-  <div class="row">
-    <% if @pets.empty? %>
-<h2>We are sorry, we do not have such pet. Try again your search.</h2>
-    <% else %>
-      <% @pets.each do |pet| %>
-        <div class="col-md-4 mb-4 small-card">
-          <div class="card h-100">
-            <% pet.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, class: 'card-img-top', height: 150 %>
-            <% end %>
-            <div class="card-body">
-              <h5 class="card-title"><%= pet.name %></h5>
-              <p class="card-text"><%= pet.description %></p>
-              <a href="<%= pet_path(pet) %>" class="btn btn-primary">Rent This Pet</a>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+<div class="container my-container d-flex flex-row justify-content-evenly mt-3">
+  <div class="cards">
+    <%= render partial:'layouts/pet_card', collection: @pets, as: :pet %>
   </div>
 </div>

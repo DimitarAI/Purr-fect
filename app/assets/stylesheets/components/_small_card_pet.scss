@@ -1,3 +1,118 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
+  width: 80%;
+  border-radius: 20px;
+
+}
+
+.container.my-container {
+  width: 80%;
+  display: grid;
+  border-radius: 20px;
+
+}
+
+.mb4.small-card {
+  width: 80%;
+  display: grid;
+  border-radius: 20px;
+
+}
+.card .h-100 {
+  border-radius: 20px;
+}
+
 .small-card {
-  font-size: 12px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+
+.custom-btn {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #AD88C6;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.custom-btn:hover:before {
+  width: 0;
+  height: 0;
+}
+
+.custom-btn:hover {
+  color: #AD88C6;
+  background-color: #fff;
+  box-shadow: 0 0 20px #AD88C6;
+}
+
+.custom-btn:hover:after {
+  content: 'PURR!!!';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffcc00;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
