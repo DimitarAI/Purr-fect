@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+
   def index
     @bookings = Booking.all
     @my_pets_bookings = Booking.where(pet_id: current_user.pets.pluck(:id))

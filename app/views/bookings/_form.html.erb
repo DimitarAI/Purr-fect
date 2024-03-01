@@ -5,6 +5,8 @@
       <%= f.input :start_date %>
       <%= f.input :end_date %>
       <%# <%= f.input :status %>
-      <%= f.submit class:"btn btn-primary" %>
+      <%= f.submit "Create Booking",
+               class: "btn btn-primary",
+               title: user_signed_in? ? "" : "You have to Log in before making the booking!" %>
     <% end %>
 </div>
