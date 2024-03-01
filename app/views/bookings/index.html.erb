@@ -29,6 +29,7 @@
                 <%=link_to "Decline", dashboard_path, class:"btn btn-danger"%>
               <% elsif booking.status == "accepted" %>
                 <h6 class="card-title"><strong>Status:</strong> <%= booking.status%></h6>
+                <%= link_to "Back to my Bookings", dashboard_path %>
               <% else booking.status == "declined" %>
                 <h6 class="card-title"><strong>Status:</strong> <%= booking.status %></h6>
               <% end %>
