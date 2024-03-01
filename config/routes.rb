@@ -19,15 +19,15 @@ Rails.application.routes.draw do
 
 
   get "dashboard", to: "bookings#index"
-  patch "accept", to: "bookings#accept"
-  patch "decline", to: "bookings#decline"
+  # patch "accept", to: "bookings#accept"
+  # patch "decline", to: "bookings#decline"
 
-  # resources :bookings, only: [:index] do
-  #   collection do
-  #     patch :accept
-  #     patch :decline
-  #   end
-  # end
+  resources :bookings, only: [:index] do
+    member do
+      patch :accept
+      patch :decline
+    end
+  end
 
 
   # Defines the root path route ("/")

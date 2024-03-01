@@ -1,5 +1,6 @@
 <div class="container-dashboard">
-  <h3>Here are your bookings</h3>
+  <h3>Here are all your bookings</h3>
+  <h4>Bookings you've made:</h4>
   <div class= "my-booking">
     <% if @my_bookings.empty? %>
       <h5>You didn't make any bookings yet</h5>
@@ -9,6 +10,13 @@
             <h5 class="card-header">You booked <strong><%= booking.pet.name %></strong></h5>
               <div class="card-body">
                 <h6 class="card-title"><i class="fa-solid fa-calendar-days"></i> <%= booking.start_date.strftime('%d. %B %Y') %> - <%= booking.end_date.strftime('%d. %B %Y') %></h6>
+                <% if booking.status == "pending" %>
+                  <h6 class="card-title"><strong>Status:</strong> <%= booking.status %> &#x23F3</h6>
+                <% elsif booking.status == "accepted" %>
+                  <h6 class="card-title accept"><strong>Status:</strong> <%= booking.status%> &#9989</h6>
+                <% else booking.status == "declined" %>
+                  <h6 class="card-title decline"><strong>Status:</strong> <%= booking.status %> &#10060	</h6>
+                <% end %>
               </div>
           </div>
         <% end %>
@@ -18,19 +26,20 @@
   <% if @my_pets_bookings.empty? %>
     <h5>No pending requests for your pets</h5>
     <% else %>
+    <h4>Bookings of your pet(s):</h4>
       <% @my_pets_bookings.each do |booking| %>
         <div class="card booking">
           <h5 class="card-header">Booking from <strong><%= booking.user.first_name %></strong> for <strong><%= booking.pet.name %></strong></h5>
             <div class="card-body">
               <h6 class="card-title"><i class="fa-solid fa-calendar-days"></i> <%= booking.start_date.strftime('%d. %B %Y') %> - <%= booking.end_date.strftime('%d. %B %Y') %></h6>
               <% if booking.status == "pending" %>
-                <h6 class="card-title"><strong>Status:</strong> <%= booking.status %></h6>
-                <%=link_to "Accept", accept_path, data: { 'turbo-method': :patch }, class:"btn btn-success"%>
-                <%=link_to "Decline", decline_path, data: { 'turbo-method': :patch }, class:"btn btn-danger"%>
+                <h6 class="card-title"><strong>Status:</strong> <%= booking.status %> &#x23F3</h6>
+                <%=link_to "Accept", accept_booking_path(booking), data: { 'turbo-method': :patch }, class:"btn btn-success"%>
+                <%=link_to "Decline", decline_booking_path(booking), data: { 'turbo-method': :patch }, class:"btn btn-danger"%>
               <% elsif booking.status == "accepted" %>
-                <h6 class="card-title"><strong>Status:</strong> <%= booking.status%></h6>
+                <h6 class="card-title accept"><strong>Status:</strong> <%= booking.status%> &#9989</h6>
               <% else booking.status == "declined" %>
-                <h6 class="card-title"><strong>Status:</strong> <%= booking.status %></h6>
+                <h6 class="card-title decline"><strong>Status:</strong> <%= booking.status %> &#10060	</h6>
               <% end %>
             </div>
         </div>
