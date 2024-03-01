@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.pet = @pet
     @booking.status = "pending"
     if @booking.save
-      redirect_to pet_path(@pet)
+      redirect_to dashboard_path(@user)
     else
       render "pets/show", status: :unprocessable_entity
     end
