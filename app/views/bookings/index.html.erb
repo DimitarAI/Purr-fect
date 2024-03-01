@@ -25,8 +25,8 @@
               <h6 class="card-title"><i class="fa-solid fa-calendar-days"></i> <%= booking.start_date.strftime('%d. %B %Y') %> - <%= booking.end_date.strftime('%d. %B %Y') %></h6>
               <% if booking.status == "pending" %>
                 <h6 class="card-title"><strong>Status:</strong> <%= booking.status %></h6>
-                <%=link_to "Accept", dashboard_path, class:"btn btn-success"%>
-                <%=link_to "Decline", dashboard_path, class:"btn btn-danger"%>
+                <%=link_to "Accept", accept_path, data: { 'turbo-method': :patch }, class:"btn btn-success"%>
+                <%=link_to "Decline", decline_path, data: { 'turbo-method': :patch }, class:"btn btn-danger"%>
               <% elsif booking.status == "accepted" %>
                 <h6 class="card-title"><strong>Status:</strong> <%= booking.status%></h6>
               <% else booking.status == "declined" %>
